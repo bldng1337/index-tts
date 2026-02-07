@@ -55,7 +55,7 @@ dependencies = [
   "torch>=2.10.0",
   "torchaudio==2.10.0",
   "tqdm>=4.67.1",
-  "transformers==5.1.0",
+  "transformers==4.57.3",
 
   # Use "wetext" on Windows/Mac, otherwise "WeTextProcessing" on Linux.
   "wetext>=0.0.9; sys_platform != 'linux'",

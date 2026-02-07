@@ -82,7 +82,20 @@ from transformers.generation.stopping_criteria import (
 from transformers.integrations.deepspeed import is_deepspeed_zero3_enabled
 from transformers.integrations.fsdp import is_fsdp_managed_module
 from transformers.modeling_outputs import CausalLMOutputWithPast, Seq2SeqLMOutput
-from transformers.tokenization_python import ExtensionsTrie
+
+
+# Fallback ExtensionsTrie for transformers 4.57.3 compatibility
+class ExtensionsTrie:
+    """A simple trie for finding tokens with a given prefix."""
+
+    def __init__(self, vocab: Dict[str, int]):
+        self.vocab = vocab
+
+    def extensions(self, prefix: str) -> List[str]:
+        """Return all tokens in the vocabulary that start with the given prefix."""
+        return [token for token in self.vocab.keys() if token.startswith(prefix)]
+
+
 from transformers.utils import (
     ModelOutput,
     is_accelerate_available,
