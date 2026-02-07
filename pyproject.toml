@@ -28,7 +28,7 @@ dependencies = [
   # and update the lockfile after editing anything below.
   # WARNING: Ensure that you don't have a local `uv.toml` which overrides PyPI
   # while generating the lockfile: https://github.com/astral-sh/uv/issues/15741
-  "accelerate==1.8.1",
+  "accelerate==1.12.0",
   "cn2an==0.5.22",
   "cython==3.0.7",
   "descript-audiotools==0.7.2",
@@ -51,11 +51,11 @@ dependencies = [
   "sentencepiece>=0.2.1",
   "tensorboard==2.9.1",
   "textstat>=0.7.10",
-  "tokenizers==0.21.0",
-  "torch==2.8.*",
-  "torchaudio==2.8.*",
+  "tokenizers>=0.22.0",
+  "torch>=2.10.0",
+  "torchaudio==2.10.0",
   "tqdm>=4.67.1",
-  "transformers==4.52.1",
+  "transformers==5.1.0",
 
   # Use "wetext" on Windows/Mac, otherwise "WeTextProcessing" on Linux.
   "wetext>=0.0.9; sys_platform != 'linux'",
@@ -65,7 +65,7 @@ dependencies = [
 [project.optional-dependencies]
 # To install the WebUI support, use `uv sync --extra webui` (or `--all-extras`).
 webui = [
-  "gradio==5.45.0",
+  "gradio>=5.0.0",
 ]
 # To install the DeepSpeed support, use `uv sync --extra deepspeed` (or `--all-extras`).
 deepspeed = [
